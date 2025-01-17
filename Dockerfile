@@ -16,5 +16,8 @@ LABEL org.opencontainers.image.source="https://github.com/NightMeer/DockerTempla
 
 RUN apt update && apt upgrade -y
 
-ENTRYPOINT ["tail"]
-CMD ["-f","/dev/null"]
+COPY ./script.sh /script.sh
+RUN chmod +x /script.sh
+
+ENTRYPOINT ["/bin/sh"]
+CMD ["-c","/script.sh"]
