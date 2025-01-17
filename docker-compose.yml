@@ -1,0 +1,4 @@
+services:
+  template:
+    image: ghcr.io/nightmeer/dockertemplate:dockerfile
+    container_name: dockertemplate
